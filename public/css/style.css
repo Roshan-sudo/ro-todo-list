@@ -1,0 +1,104 @@
+html{
+    background-image: -webkit-linear-gradient(65deg, #A683E3 50%, #E4E9FD 50%);
+    height: 100vh;
+    font-family: 'helvetica neue';
+    background-color: #E4E9FD;
+}
+
+/* ========== Day and Date Heading ========== */
+#heading{
+    background-color: #A683E3;
+    color: #FFFFFF;
+    padding: 10px 50px;
+    font-weight: 700;
+    border-radius: 7px;
+    font-family: sans-serif;
+    max-width: 400px;
+    margin: 40px auto;
+}
+
+/* ========== List Box ========== */
+.box{
+    background-color: #FFFFFF;
+    max-width: 400px;
+    margin: 0 auto;
+    border-radius: 7px;
+    position: relative;
+}
+
+/* ======= Each Item ======= */
+.item{
+    border-bottom: 1px solid #f1f1f1;
+    min-height: 50px;
+    position: relative;
+}
+
+/* ======= Each Checkbox ======= */
+.item input[type*='checkbox']{
+    margin-left: 20px;
+}
+
+/* ======= Each Item Text ======= */
+.item p{
+    display: inline-block;
+    margin: 0 0 0 25px;
+    padding: 0;
+    font-family: sans-serif;
+    color: #00000087;
+}
+
+/* ====== Add Item Input ======= */
+#addItem form input{
+    min-height: 70px;
+    border: 0;
+    text-align: center;
+    font-family: sans-serif;
+    width: 100%;
+    color: #00000087;
+    border-bottom-left-radius: 7px;
+    border-bottom-right-radius: 7px;
+}
+
+/* ====== Focus Effect on Add Item Input and Button ===== */
+#addItem form input:focus, .box form button:focus{
+    border: 0;
+    outline: none;
+}
+
+/* ===== Add Item Input Placeholder ===== */
+#addItem form input::placeholder{
+    color: #00000087;
+}
+
+/* ===== Add Item Button ===== */
+#addItem form button{
+    color: #fff;
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    border: 0;
+    background-color: #A683E3;
+}
+
+/*
+  ===== Adding line-through effect on checkbox when checked.
+*/
+.item input:checked + p{
+    color: #0000005e;
+    text-decoration: line-through;
+}
+
+/* ======= Delete Button ======= */
+.item button{
+  position: absolute;
+  right: 10px;
+  top: 10px;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  border: 0;
+  display: none;
+}

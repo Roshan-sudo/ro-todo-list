@@ -1,0 +1,43 @@
+<%- include('header') -%>
+
+<body style="background-color:transparent">
+  <!-- Main Container -->
+  <div class="text-center">
+    <!-- Day and Date -->
+    <h4 id="heading"><%= today %></h4>
+    <!-- Items List Box -->
+    <div class="box">
+
+      <!-- Looping through all list -->
+      <% for(var i=0; i<newItems.length; i++){ %>
+      <div class="item d-flex align-items-center justify-content-start">
+        <!-- Form to delete items -->
+        <form action="/delete" method="post">
+          <!-- Hidden input box to store item id -->
+          <input type="hidden" name="delete" value="<%= newItems[i]._id %>">
+          <input type="hidden" name="pageHeading" value="<%= today %>">
+          <!-- Delete button -->
+          <button type="submit" name="btn" value="<%= today %>" class="delete"><i class="fas fa-trash"></i></button>
+        </form>
+        <!-- Checkbox -->
+        <input type="checkbox">
+        <!-- List Item -->
+        <p><%= newItems[i].name %></p>
+      </div>
+      <% } %>
+      <!-- Looping Ends -->
+
+      <!-- Form to add new items -->
+      <div id="addItem">
+        <form action="/" method="post">
+          <input type="text" name="newItem" autocomplete="off" placeholder="New Item">
+          <button type="submit" name="btn" value="<%= today %>"><i class="fas fa-plus"></i></button>
+        </form>
+      </div>
+      <!-- Add new item form ends -->
+
+    </div>
+  </div>
+
+
+<%- include('footer') -%>
